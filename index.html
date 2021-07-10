@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<title>Modal Popup Box</title>
+<style>
+*{margin:0px; padding:0px; }
+
+body {
+    background: #fbf3ff;
+  } 
+  .container {
+    position: absolute;
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+  .myLeftCtn {
+    position: relative;
+    background:white;
+    /* border-radius: 75px; */
+    height: fit-content;
+    width: fit-content;
+    padding: 25px;
+    
+  }
+  .myLeftCtn header {
+    color:black;
+    margin: 20px;
+    font-size: 25px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    margin-right: 100px;
+
+  }
+
+  .row{
+  height: 100%;
+  } 
+  .myCard {
+    display:flex;
+    position: absolute;
+    background:rgb(181, 226, 240);
+    height: 100%;
+    border-radius: 25px;
+  } 
+  .myLeftCtn .myInput {
+    display: flex;
+    margin-right: 10px;
+    width: 80px;
+    border-radius: 25px;
+    padding: 10px;
+    padding-right: 50px;
+    border: none;
+    padding-bottom: 2px;
+  }
+  .myLeftCtn .myInput:focus{
+    outline: none;
+  } 
+    
+  
+  .myForm {
+    position: relative;
+    margin-top: 25px;
+  } 
+ 
+    .myLeftCtn .butt {
+    background:#0d47a1;
+    color: white;
+    width: 50px;
+    border: none;
+    margin-top: 10px;
+    margin-left: 25px;
+    border-radius: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+  } 
+  
+  .myLeftCtn .butt:focus {
+    outline: none;
+  } 
+
+.imgcontainer {
+    text-align: center;
+    margin: 5px 0px 0px 5px;
+    position: relative;
+}
+
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.close {
+    position: absolute;
+    right: 11px;
+    top: -45px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 270px;
+}
+.close:hover,.close:focus {
+    color:#0d47a1;
+    cursor: pointer;
+}
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+</style>
+</style>
+<body >
+
+
+<button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width:200px; margin-top:200px; margin-left:160px;">
+Assign Task</button>
+
+<div id="modal-wrapper" class="modal">
+  
+        
+    <div class="container">
+        <div class="mycard">
+            <div class="row">
+                <div class="col-12-md">
+                    <div class="myLeftCtn"> 
+                        <form class="myForm text-center">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                                <header>Add New Task</header>
+                              </div>
+                            <div class="form-group">
+                                <input class="myInput" type="text" placeholder="Taskname"  id="taskname" required> 
+                                <hr>
+                            </div>
+                       
+                            <div class="form-group">
+                                <input class="myInput"  type="text" placeholder="Recipient" id="recipient" required> 
+                                <hr>
+                            </div>
+                        
+                            <div class="form-group">
+                                
+                                <input class="myInput" type="text" placeholder="Deadline" id="deadline" required> 
+                                <hr>
+                            </div>
+                        
+                            <div class="form-group">
+                               
+                                <Input class="myInput" type="text"  placeholder="Comments.."id="comment" >
+                                    <hr>
+                            </div>
+                        
+                            <input type="submit" class="butt" value="submit">
+                            <input type="reset"  class="butt" value="reset">
+                        </form>
+                    </div>
+                </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+<script>
+var modal = document.getElementById('modal-wrapper');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
